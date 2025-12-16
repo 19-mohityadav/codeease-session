@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-/* 🌌 Background with animated particles */
+/* 🌌 Modern premium background */
 .container {
   position: relative;
   min-height: 100vh;
@@ -11,7 +11,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background:
+    radial-gradient(circle at top, rgba(255, 215, 0, 0.08), transparent 40%),
+    linear-gradient(135deg, #0b1020, #111827, #1f2937);
   color: #ffffff;
   font-family: "Inter", "Segoe UI", system-ui, sans-serif;
   padding: 2rem;
@@ -19,33 +21,39 @@
   overflow: hidden;
 }
 
-/* Floating particles */
+/* ✨ Smooth floating particles */
 .container::before,
 .container::after {
   content: "";
   position: absolute;
-  width: 200%;
-  height: 200%;
+  inset: -50%;
   background-image:
-    radial-gradient(circle, rgba(255,255,255,0.15) 2px, transparent 2px);
-  background-size: 60px 60px;
-  animation: floatParticles 60s linear infinite;
+    radial-gradient(circle, rgba(255,255,255,0.12) 1.5px, transparent 2px);
+  background-size: 80px 80px;
+  animation: slowFloat 120s linear infinite;
   opacity: 0.25;
 }
 
 .container::after {
-  background-size: 90px 90px;
-  animation-duration: 90s;
+  background-size: 120px 120px;
+  animation-duration: 180s;
   opacity: 0.15;
 }
 
-@keyframes floatParticles {
+@keyframes slowFloat {
   from {
     transform: translate(0, 0);
   }
   to {
-    transform: translate(-200px, -200px);
+    transform: translate(-300px, -300px);
   }
+}
+
+/* 🌟 Soft golden spotlight illusion */
+.container:hover::after {
+  background-image:
+    radial-gradient(circle, rgba(255, 215, 0, 0.18) 0%, transparent 35%),
+    radial-gradient(circle, rgba(255,255,255,0.1) 1.5px, transparent 2px);
 }
 
 /* Title */
@@ -53,10 +61,10 @@
   font-size: clamp(2.6rem, 5vw, 4rem);
   font-weight: 800;
   margin-bottom: 1rem;
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  background: linear-gradient(90deg, #facc15, #60a5fa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 30px rgba(0, 123, 255, 0.4);
+  text-shadow: 0 0 35px rgba(250, 204, 21, 0.35);
   z-index: 1;
 }
 
@@ -64,12 +72,12 @@
 .subtitle {
   font-size: 1.3rem;
   margin-bottom: 3rem;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 500px;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 520px;
   z-index: 1;
 }
 
-/* Button container */
+/* Buttons wrapper */
 .buttonContainer {
   display: flex;
   gap: 1.75rem;
@@ -78,24 +86,25 @@
   z-index: 1;
 }
 
-/* Base button (glass) */
+/* 🧊 Glass button base */
 .button {
   position: relative;
   padding: 0.9rem 2.4rem;
   font-size: 1.05rem;
   font-weight: 600;
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px);
-  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   cursor: pointer;
   overflow: hidden;
-  transition: all 0.35s ease;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  transition: all 0.4s ease;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Shine effect */
+/* Shine sweep */
 .button::before {
   content: "";
   position: absolute;
@@ -103,47 +112,47 @@
   background: linear-gradient(
     120deg,
     transparent,
-    rgba(255, 255, 255, 0.35),
+    rgba(255, 215, 0, 0.35),
     transparent
   );
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
+  transform: translateX(-120%);
+  transition: transform 0.8s ease;
 }
 
 .button:hover::before {
-  transform: translateX(100%);
+  transform: translateX(120%);
 }
 
-/* Hover motion */
+/* Hover lift */
 .button:hover {
   transform: translateY(-6px) scale(1.04);
 }
 
 /* Active */
 .button:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
-/* 🟢 EASY (green) */
+/* 🟢 EASY */
 .buttonContainer .button:nth-child(1):hover {
   box-shadow:
-    0 20px 40px rgba(40, 167, 69, 0.6),
-    0 0 30px rgba(40, 167, 69, 0.6);
-  border-color: rgba(40, 167, 69, 0.8);
+    0 25px 50px rgba(34, 197, 94, 0.6),
+    0 0 35px rgba(34, 197, 94, 0.6);
+  border-color: rgba(34, 197, 94, 0.9);
 }
 
-/* 🟡 MEDIUM (yellow) */
+/* 🟡 MEDIUM */
 .buttonContainer .button:nth-child(2):hover {
   box-shadow:
-    0 20px 40px rgba(255, 193, 7, 0.6),
-    0 0 30px rgba(255, 193, 7, 0.6);
-  border-color: rgba(255, 193, 7, 0.9);
+    0 25px 50px rgba(250, 204, 21, 0.65),
+    0 0 40px rgba(250, 204, 21, 0.7);
+  border-color: rgba(250, 204, 21, 0.9);
 }
 
-/* 🔴 HARD (red) */
+/* 🔴 HARD */
 .buttonContainer .button:nth-child(3):hover {
   box-shadow:
-    0 20px 40px rgba(220, 53, 69, 0.6),
-    0 0 30px rgba(220, 53, 69, 0.6);
-  border-color: rgba(220, 53, 69, 0.9);
+    0 25px 50px rgba(239, 68, 68, 0.65),
+    0 0 40px rgba(239, 68, 68, 0.7);
+  border-color: rgba(239, 68, 68, 0.9);
 }

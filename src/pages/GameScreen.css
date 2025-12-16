@@ -1,0 +1,80 @@
+/* Remove body margin globally */
+body {
+  margin: 0;
+}
+
+/* 🌌 Page container */
+.game-container {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(250, 204, 21, 0.08), transparent 40%),
+    linear-gradient(135deg, #0b1020, #111827, #1f2937);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+/* 🧠 Title on top */
+.game-title {
+  position: absolute;
+  top: 2rem;
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-weight: 800;
+  background: linear-gradient(90deg, #60a5fa, #facc15);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 40px rgba(96, 165, 250, 0.4);
+}
+
+/* 🎯 Difficulty card */
+.difficulty-card {
+  padding: 3rem 4rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  text-align: center;
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(250, 204, 21, 0.25);
+
+  /* 🔥 Animation */
+  animation: riseUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Text */
+.difficulty-text {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 0.75rem;
+}
+
+/* Difficulty value */
+.difficulty-value {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #22c55e, #facc15, #ef4444);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(250, 204, 21, 0.4);
+}
+
+/* 🎬 Entrance animation */
+@keyframes riseUp {
+  from {
+    opacity: 0;
+    transform: translateY(120px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

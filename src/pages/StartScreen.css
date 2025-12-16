@@ -62,8 +62,14 @@
   font-weight: 800;
   margin-bottom: 1rem;
   background: linear-gradient(90deg, #facc15, #60a5fa);
+
+  /* ✅ Standard + WebKit */
+  background-clip: text;
   -webkit-background-clip: text;
+
+  color: transparent;
   -webkit-text-fill-color: transparent;
+
   text-shadow: 0 0 35px rgba(250, 204, 21, 0.35);
   z-index: 1;
 }
